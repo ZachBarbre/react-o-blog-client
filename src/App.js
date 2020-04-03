@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
 import Blog from './components/Blog.jsx'
 import SingleBlog from './components/SingleBlog';
+import NewBlog from './components/NewBlog.jsx';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Route path='/' exact component={Blog} />
         <Route path='/blog/:blogId?' component={SingleBlog} />
+        <Route path='/newblog' component={NewBlog} />
       </Router>
     </div>
   );
