@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components'
+import { BlogEntry, AuthorLine } from './BlogStyles';
 import getData from '../utils/getData';
-
-const BlogEntry = styled.section`
-border: 1px solid;
-width: 640px;
-margin: 1% auto;
-`;
-
-const AuthorLine = styled.div`
-display: flex;
-justify-content: space-around;
-`;
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -27,7 +16,7 @@ const Blog = () => {
     return (
         <>
             {blogs.map(blog => 
-                    <BlogEntry>
+                    <BlogEntry key={blog.id}>
                         <h2>{blog.title}</h2>
                         <AuthorLine>
                             <p>{blog.username}</p>
